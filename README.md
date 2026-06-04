@@ -218,11 +218,11 @@ When DocTrace AI extracts a field, it doesn't just give you the value — it giv
 
 ## 🚀 Roadmap
 
-| Feature | Status |
-|---------|--------|
-| Bidirectional PDF ↔ Field Sync | ✅ Done |
-| Multi-field simultaneous highlighting | ✅ Done |
-| Confidence score visualization | ✅ Done |
+| Feature | Status     |
+|---------|------------|
+| Bidirectional PDF ↔ Field Sync | ✅ Done     |
+| Multi-field simultaneous highlighting | ✅ Done     |
+| Confidence score visualization | ✅ Done     |
 | Human-in-the-loop correction | 🔜 Planned |
 | Table structure extraction | 🔜 Planned |
 | Document classification | 🔜 Planned |
@@ -257,6 +257,23 @@ Most AI systems extract a value and you just have to **trust it**.
 DocTrace AI forces the AI to extract values **only from blocks it can see** — not from hallucinated or inferred knowledge. Every answer is anchored to a real chunk of text in the document, with coordinates you can verify with your own eyes.
 
 This is what **Explainable AI** looks like in practice.
+
+<br/>
+
+---
+
+## ▶️ How to Run
+
+### Frontend
+```bash
+npm install
+npm run dev
+```
+
+### Backend
+```bash
+python -m uvicorn main:app --reload
+```
 
 <br/>
 
