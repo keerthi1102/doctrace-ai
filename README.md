@@ -220,9 +220,9 @@ When DocTrace AI extracts a field, it doesn't just give you the value — it giv
 
 | Feature | Status |
 |---------|--------|
-| Bidirectional PDF ↔ Field Sync | 🔜 Planned |
-| Multi-field simultaneous highlighting | 🔜 Planned |
-| Confidence score visualization | 🔜 Planned |
+| Bidirectional PDF ↔ Field Sync | ✅ Done |
+| Multi-field simultaneous highlighting | ✅ Done |
+| Confidence score visualization | ✅ Done |
 | Human-in-the-loop correction | 🔜 Planned |
 | Table structure extraction | 🔜 Planned |
 | Document classification | 🔜 Planned |
