@@ -79,7 +79,49 @@ Traditional AI document extraction tools give you **answers without proof**.
 
 ## 🏗️ System Architecture
 
-![DocTrace AI System Architecture](docs/assets/system-architecture.png)
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        USER UPLOADS PDF                      │
+└─────────────────────────────┬───────────────────────────────┘
+                              │
+                              ▼
+              ┌───────────────────────────────┐
+              │       PDF Type Detector        │
+              └──────────────┬────────────────┘
+                             │
+              ┌──────────────┴─────────────────┐
+              ▼                                 ▼
+ ┌────────────────────┐           ┌──────────────────────┐
+ │   Digital PDF      │           │     Scanned PDF       │
+ │   Processing       │           │     OCR Processing    │
+ │  (PyMuPDF)         │           │  (Tesseract / OCR)   │
+ └────────┬───────────┘           └──────────┬───────────┘
+          │                                   │
+          └──────────────┬────────────────────┘
+                         ▼
+         ┌───────────────────────────────────────┐
+         │     Text Blocks  +  Bounding Boxes     │
+         │         Page Metadata & Layout         │
+         └───────────────────┬───────────────────┘
+                             │
+                             ▼
+         ┌───────────────────────────────────────┐
+         │        Gemini Extraction Engine        │
+         │    (Grounded · Structured · Cited)     │
+         └───────────────────┬───────────────────┘
+                             │
+                             ▼
+         ┌───────────────────────────────────────┐
+         │      Structured JSON + Block Refs      │
+         │   { value, page, block_id, bbox }      │
+         └───────────────────┬───────────────────┘
+                             │
+                             ▼
+         ┌───────────────────────────────────────┐
+         │       Interactive PDF Viewer           │
+         │   Highlight · Scroll · Zoom · Verify   │
+         └───────────────────────────────────────┘
+```
 
 <br/>
 
@@ -87,7 +129,24 @@ Traditional AI document extraction tools give you **answers without proof**.
 
 ## 🔄 End-to-End Workflow
 
-![DocTrace AI End-to-End Workflow](docs/assets/end-to-end-workflow.png)
+```
+   1. 📤  Upload PDF
+          │
+   2. 🔎  PDF Classification  (Digital or Scanned?)
+          │
+   3-a. 📑  Digital → PyMuPDF Extraction
+   3-b. 🖨️  Scanned → OCR Extraction
+          │
+   4. 🧱  Generate Text Blocks + Bounding Boxes
+          │
+   5. 🤖  Gemini Grounded Extraction
+          │
+   6. 📊  Structured JSON Output
+          │
+   7. 🗺️  Source Attribution Mapping
+          │
+   8. 🖥️  Interactive PDF Highlighting + Scroll Sync
+```
 
 <br/>
 
