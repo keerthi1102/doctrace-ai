@@ -242,7 +242,6 @@ When DocTrace AI extracts a field, it doesn't just give you the value — it giv
 - 🧾 **Invoice Processing** — Extract invoice numbers, line items, totals with source proof
 - 📦 **Procurement Documents** — Validate PO fields against source pages
 - 👤 **HR Documents** — Parse contracts, payslips, and onboarding forms
-- ✈️ **Aircraft Technical Logs (ATL/AL)** — Mission-critical traceability for aviation
 - 🔧 **Maintenance Records** — Trace repair entries back to scanned log pages
 - 📋 **Compliance & Regulatory Audits** — Full evidence chain for every extracted value
 - 🏢 **Enterprise IDP** — Scalable Intelligent Document Processing with explainability
